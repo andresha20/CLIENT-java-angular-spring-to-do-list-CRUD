@@ -1,0 +1,57 @@
+<div class="container py-5">
+  <div class="card p-3 my-5">
+    <div class="row">
+      <div class="col-md-2">
+        <img src="/assets/img/tasks.jpg" height="100" alt="Tasks" >
+      </div>
+      <div class="col-md-9">
+        <h1 class="text-primary">Tasks manager</h1>
+        <p>With this application you will be able to view, create, update and delete tasks of any kind.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body text-center">
+          <h3>Tasks</h3>
+        </div>
+        <ul class="list-group list-group-flush" *ngFor="let task of tasks">
+          <li class="list-group-item fw-bold d-flex justify-content-between">
+            {{ task.name }}
+            <div class="text-muted">
+              <small class="text-success mx-2" *ngIf="task.completed; else uncompleted">
+                <i class="fa fa-check-circle"></i> Completed
+              </small>
+              <ng-template #uncompleted>
+                <small class="text-warning mx-2"><i class="fa fa-clock"></i> Pending</small>
+              </ng-template>
+              <i class="fa fa-edit cursor-pointer" (click)="edit(task)" title="Edit"></i>
+              <i class="fa fa-trash ms-2 cursor-pointer" (click)="delete(task.id)" title="Delete"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body text-center">
+          <h3>{{ task.id ? "Edit" : "Add new"}} {{task.name}}</h3>
+          <form (ngSubmit)="save()">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Title</span>
+              </div>
+              <input [(ngModel)]="task.name" type="text" name="name" class="form-control" id="title" placeholder="Text goes here..." aria-describedby="basic-addon3">
+            </div>
+            <div class="mb-3 form-check d-flex">
+              <input [(ngModel)]="task.completed" id="completed" type="checkbox" class="form-check-input" name="completed">
+              <label for="completed" class="form-check-label">Tick this box if completed</label>
+            </div>
+            <div class="text-end">
+              <a name="" id="" (click)="save()" class="btn btn-primary text-end" href="#" role="button">Add task</a>
+            </div>
+          </form>
+        </div>
+      </div>
+</div>
