@@ -1,4 +1,4 @@
-# java-spring-to-do-list-CRUD
+# CLIENT-java-spring-to-do-list-CRUD
 This project is a simple, yet useful to-do list built on top of Angular.
 
 # DEVELOPMENT DATA:
