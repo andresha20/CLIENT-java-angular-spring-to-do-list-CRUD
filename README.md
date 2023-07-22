@@ -1,5 +1,5 @@
 # CLIENT-java-spring-to-do-list-CRUD
-This project is a simple, yet useful to-do list built on top of Angular.
+This project is a simple, yet useful to-do list built on top of Angular. The backend-side of this project can be found  <a href="https://github.com/andresha20/SERVER-java-angular-spring-to-do-list-CRUD" target="_blank">HERE.</a>
 
 # DEVELOPMENT DATA:
 1. This is the frontend built with Angular using Typescript.
